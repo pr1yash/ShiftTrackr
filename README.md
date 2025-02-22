@@ -1,23 +1,68 @@
 # ShiftTrackr
 
-**ShiftTrackr** is a web application designed for efficient employee time tracking. It enables business owners to create and manage accounts for their businesses, while employees can easily log their working hours by clocking in and out. The app provides a user-friendly interface for employers to review and approve submitted hours, facilitating accurate payroll calculations.
+## Overview  
+ShiftTrackr is a web application designed for business owners and employees to manage working hours efficiently. Employees can clock in and out, while employers can review and approve timesheets for accurate payroll processing.  
 
-## Features
+## Features  
+- **User Authentication** – Secure login and registration using Firebase Authentication.  
+- **Time Logging** – Employees clock in and out, logging hours accurately.  
+- **Approval Workflow** – Employers review and approve hours before payroll processing.  
+- **Payroll Calculation** – Automatically calculates total weekly work hours for payroll.  
+- **Dashboard** – Employers can view pending and approved hours.  
+- **Offline Support** – Employees can log hours offline, syncing when online.  
+- **Real-time Updates** – Instant synchronization with Firebase Firestore.  
 
-- **User Authentication**: Secure login and registration for both employers and employees using Firebase Authentication.
-- **Time Logging**: Employees can clock in and out with a simple interface, logging their hours accurately.
-- **Approval Workflow**: Employers can review and approve employee hours before they are finalized, ensuring accurate records.
-- **Dashboard**: A clean, organized view for employers to see employee hours for the week, including pending and approved entries.
-- **Database Integration**: Uses SQL for structured data management, ensuring scalability and performance.
+## Technologies Used  
+- **Frontend:** Flutter (Dart)  
+- **State Management:** Riverpod (or Provider, to be decided)  
+- **Backend:** Firebase Firestore (NoSQL)  
+- **Authentication:** Firebase Authentication  
+- **Offline Sync:** Firestore local persistence  
 
-## Technologies Used
+## Getting Started  
 
-- **Frontend**: React for a dynamic user interface.
-- **Backend**: Node.js with Express to handle API requests.
-- **Database**: SQL for efficient data storage and retrieval.
-- **Authentication**: Firebase for secure user management.
+### Installation  
+```bash
+# Clone the repository
+git clone https://github.com/your-username/ShiftTrackr.git  
+cd ShiftTrackr  
 
-## Getting Started
+# Install dependencies  
+flutter pub get  
+```
 
-To get started with ShiftTrackr, clone the repository and follow the setup instructions in the README file.
+### Firebase Setup  
+1. Create a Firebase Project at [Firebase Console](https://console.firebase.google.com/)  
+2. Enable Authentication (Email/Password)  
+3. Enable Firestore Database (with offline sync)  
+4. Download `google-services.json` and place it in `android/app/`  
+
+### Running the App  
+```bash
+flutter run  
+```
+
+## Project Structure  
+```
+/lib  
+ ├── main.dart             # Entry point  
+ ├── screens/              # UI screens (Login, Dashboard, Time Tracking)  
+ ├── providers/            # State management with Riverpod  
+ ├── services/             # Firebase Firestore interactions  
+ ├── models/               # Data models (User, Shift, Payroll)  
+ ├── utils/                # Utility functions  
+```
+
+## Future Features  
+- Export payroll reports as CSV  
+- Implement overtime and bonus tracking  
+- Role-based permissions (Admin, Manager, Employee)  
+
+## Contributing  
+1. Fork the repository  
+2. Create a feature branch: `git checkout -b feature-name`  
+3. Commit changes: `git commit -m "Added feature"`  
+4. Push to branch: `git push origin feature-name`  
+5. Open a Pull Request  
+
 
